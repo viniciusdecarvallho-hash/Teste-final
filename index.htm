@@ -1,0 +1,3275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#174b9b">
+<meta name="description" content="Mater Dei — terços confeccionados com fé, devoção e amor à Santíssima Virgem Maria.">
+<title>Mater Dei | Terços</title>
+
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap");
+
+:root{
+  --azul:#174b9b;
+  --azul2:#0e3470;
+  --azul-claro:#718fc3;
+  --azul-fundo:#edf3fb;
+  --creme:#f7f3e9;
+  --papel:#fffdf8;
+  --texto:#171717;
+  --suave:#62676f;
+  --linha:#d9dee7;
+  --dourado:#b99a55;
+  --verde:#198754;
+  --sombra:0 18px 50px rgba(18,55,105,.12);
+  --raio:4px;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:var(--creme);
+  color:var(--texto);
+  font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  line-height:1.6;
+}
+
+body.lock{
+  overflow:hidden;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+button,
+input,
+textarea,
+select{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+.container{
+  width:min(1180px,92%);
+  margin:auto;
+}
+
+button,
+input,
+textarea,
+select,
+.topbar,
+nav,
+.eyebrow,
+.desc,
+.price,
+.badge,
+.filter,
+.footer-links,
+.checkout-note,
+.notice,
+.summary-label{
+  font-family:"Montserrat",Arial,sans-serif;
+}
+
+
+/* =========================
+   TOPO
+========================= */
+
+.topbar{
+  background:var(--azul);
+  color:#fff;
+  text-align:center;
+  font-size:11px;
+  padding:8px 12px;
+  letter-spacing:.12em;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(255,253,248,.96);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--linha);
+}
+
+.nav{
+  min-height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.logo-img{
+  width:58px;
+  height:58px;
+  object-fit:contain;
+}
+
+.brand strong{
+  font-size:20px;
+  letter-spacing:.12em;
+}
+
+.brand small{
+  display:block;
+  color:var(--azul);
+  font-size:9px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+}
+
+nav{
+  display:flex;
+  gap:20px;
+  font-size:13px;
+}
+
+nav a:hover{
+  color:var(--azul);
+}
+
+.nav-actions{
+  display:flex;
+  align-items:center;
+  gap:9px;
+}
+
+.icon-btn,
+.cart-btn{
+  border:1px solid var(--linha);
+  background:#fff;
+  padding:10px 13px;
+  border-radius:999px;
+}
+
+.cart-btn{
+  background:var(--azul);
+  color:#fff;
+  border-color:var(--azul);
+}
+
+.cart-count{
+  display:inline-grid;
+  place-items:center;
+  min-width:20px;
+  height:20px;
+  background:#fff;
+  color:var(--azul);
+  border-radius:50%;
+  font-size:11px;
+  margin-left:4px;
+}
+
+.menu-btn{
+  display:none;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  min-height:670px;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  color:#fff;
+
+  background:
+    linear-gradient(rgba(15,61,130,.76),rgba(18,68,145,.86)),
+    url("imagens/identidade-azul.png") center/cover;
+
+  border-bottom:1px solid var(--linha);
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+
+  background:
+    radial-gradient(
+      circle at center,
+      transparent 25%,
+      rgba(0,0,0,.18) 100%
+    );
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  padding:80px 0;
+}
+
+.hero-logo{
+  width:min(210px,48vw);
+  margin:0 auto 20px;
+  filter:brightness(0) invert(1);
+}
+
+.eyebrow{
+  color:var(--azul);
+  text-transform:uppercase;
+  letter-spacing:.24em;
+  font-size:10px;
+  font-weight:600;
+}
+
+.hero .eyebrow{
+  color:#fff;
+}
+
+.hero h1{
+  font-size:clamp(45px,7vw,80px);
+  line-height:.98;
+  margin:14px 0;
+}
+
+.hero p{
+  max-width:690px;
+  margin:0 auto 30px;
+  color:#f5f7fb;
+  font-size:19px;
+}
+
+.actions{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid var(--azul);
+  background:var(--azul);
+  color:#fff;
+  padding:12px 21px;
+  border-radius:2px;
+  transition:.2s;
+}
+
+.btn:hover{
+  background:var(--azul2);
+  transform:translateY(-1px);
+}
+
+.btn.light{
+  background:#fff;
+  color:var(--azul);
+  border-color:#fff;
+}
+
+.btn.outline{
+  background:transparent;
+  color:var(--azul);
+}
+
+.btn.whatsapp{
+  background:var(--verde);
+  border-color:var(--verde);
+}
+
+
+/* =========================
+   SEÇÕES
+========================= */
+
+section{
+  padding:86px 0;
+}
+
+.section-head{
+  text-align:center;
+  margin-bottom:38px;
+}
+
+.section-head h2{
+  font-size:clamp(31px,4vw,48px);
+  margin:8px 0;
+}
+
+.section-head p{
+  max-width:700px;
+  margin:auto;
+  color:var(--suave);
+}
+
+
+/* =========================
+   FILTROS
+========================= */
+
+.filters{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  flex-wrap:wrap;
+  margin:0 auto 30px;
+}
+
+.filter{
+  border:1px solid var(--linha);
+  background:var(--papel);
+  padding:9px 15px;
+  border-radius:2px;
+  color:var(--suave);
+}
+
+.filter.active,
+.filter:hover{
+  background:var(--azul);
+  color:#fff;
+  border-color:var(--azul);
+}
+
+
+/* =========================
+   PRODUTOS
+========================= */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+
+.card{
+  background:var(--papel);
+  border:1px solid var(--linha);
+  border-radius:3px;
+  overflow:hidden;
+  box-shadow:var(--sombra);
+}
+
+.product-photo{
+  aspect-ratio:1/1;
+  background:#e8edf5;
+  position:relative;
+  overflow:hidden;
+}
+
+.product-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.35s;
+}
+
+.card:hover .product-photo img{
+  transform:scale(1.025);
+}
+
+.badge{
+  position:absolute;
+  top:13px;
+  left:13px;
+  background:var(--azul);
+  color:#fff;
+  padding:5px 10px;
+  font-size:10px;
+  letter-spacing:.04em;
+}
+
+.card-body{
+  padding:20px;
+}
+
+.card h3{
+  font-size:22px;
+  margin:0 0 5px;
+}
+
+.desc{
+  color:var(--suave);
+  font-size:13px;
+  min-height:48px;
+}
+
+.price{
+  font-size:21px;
+  color:var(--azul);
+  font-weight:600;
+  margin:13px 0;
+}
+
+.card-actions{
+  display:flex;
+  gap:8px;
+}
+
+.card-actions button{
+  flex:1;
+}
+
+.small{
+  padding:10px 12px;
+  font-size:12px;
+}
+
+
+/* =========================
+   BLOCOS VISUAIS
+========================= */
+
+.visual-break{
+  background:var(--azul-fundo);
+  border-top:1px solid #dbe4f2;
+  border-bottom:1px solid #dbe4f2;
+}
+
+.visual-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:28px;
+  align-items:center;
+}
+
+.visual-card{
+  background:#fff;
+  padding:10px;
+  box-shadow:var(--sombra);
+}
+
+.visual-card img{
+  width:100%;
+  aspect-ratio:4/3;
+  object-fit:cover;
+}
+
+.visual-copy h2{
+  font-size:clamp(32px,4vw,50px);
+  line-height:1.05;
+  margin:8px 0 15px;
+}
+
+.visual-copy p{
+  color:var(--suave);
+}
+
+
+/* =========================
+   CARACTERÍSTICAS
+========================= */
+
+.feature-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.feature{
+  background:var(--papel);
+  border:1px solid var(--linha);
+  padding:28px;
+  border-radius:3px;
+  text-align:center;
+}
+
+.feature-icon{
+  font-size:27px;
+  color:var(--azul);
+}
+
+.feature h3{
+  margin:8px 0;
+}
+
+.feature p{
+  margin:0;
+  color:var(--suave);
+  font-size:14px;
+}
+
+
+/* =========================
+   SOBRE
+========================= */
+
+.about{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:55px;
+  align-items:center;
+}
+
+.about-logo{
+  background:#fff;
+  padding:28px;
+  border:1px solid var(--linha);
+  box-shadow:var(--sombra);
+}
+
+.about-logo img{
+  width:100%;
+  max-width:430px;
+  margin:auto;
+}
+
+.ornament{
+  background:var(--papel);
+  border:1px solid var(--azul-claro);
+  padding:40px;
+  text-align:center;
+  box-shadow:var(--sombra);
+}
+
+.ornament .cross{
+  font-size:48px;
+  color:var(--azul);
+}
+
+.ornament h3{
+  font-size:32px;
+  margin:7px 0;
+}
+
+
+/* =========================
+   PERSONALIZADO
+========================= */
+
+.custom{
+  background:var(--azul);
+  color:#fff;
+}
+
+.custom-box{
+  max-width:850px;
+  margin:auto;
+  text-align:center;
+}
+
+.custom .eyebrow{
+  color:#dbe7ff;
+}
+
+.custom-box h2{
+  font-size:clamp(33px,5vw,55px);
+  margin:8px 0;
+}
+
+.custom-box p{
+  color:#e7edf9;
+  max-width:700px;
+  margin:0 auto 25px;
+}
+
+
+/* =========================
+   FAQ
+========================= */
+
+.faq{
+  max-width:800px;
+  margin:auto;
+}
+
+details{
+  background:var(--papel);
+  border:1px solid var(--linha);
+  border-radius:3px;
+  margin:10px 0;
+  padding:17px 20px;
+}
+
+summary{
+  cursor:pointer;
+  font-weight:bold;
+}
+
+details p{
+  color:var(--suave);
+  margin:12px 0 0;
+}
+
+
+/* =========================
+   CONTATO
+========================= */
+
+.contact{
+  background:#101d32;
+  color:#fff;
+}
+
+.contact .eyebrow{
+  color:#b8cbed;
+}
+
+.contact p{
+  color:#d8e0ee;
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer{
+  padding:32px 0;
+  text-align:center;
+  color:var(--suave);
+  font-size:12px;
+  background:#f2eee5;
+}
+
+.footer-logo{
+  width:75px;
+  margin:0 auto 10px;
+}
+
+.footer-links{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  flex-wrap:wrap;
+  margin:8px 0 15px;
+}
+
+.footer-links a:hover{
+  color:var(--azul);
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:900px){
+
+  nav{
+    display:none;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  .grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .about,
+  .visual-grid{
+    grid-template-columns:1fr;
+  }
+
+  .feature-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:560px){
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    min-height:610px;
+  }
+
+  section{
+    padding:62px 0;
+  }
+
+  .brand small{
+    display:none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  ✠ MATER DEI · TERÇOS CONFECCIONADOS COM FÉ E DEVOÇÃO ✠
+</div>
+
+<header>
+
+  <div class="container nav">
+
+    <a class="brand" href="#inicio">
+
+      <img
+        class="logo-img"
+        src="imagens/logo-mater-dei.png"
+        alt="Logo Mater Dei"
+      >
+
+      <span>
+        <strong>MATER DEI</strong>
+        <small>Rosarium</small>
+      </span>
+
+    </a>
+
+
+    <nav id="desktopNav">
+
+      <a href="#inicio">Início</a>
+
+      <a href="#tercos">Terços</a>
+
+      <a href="#sobre">A Mater Dei</a>
+
+      <a href="#personalizados">
+        Personalizados
+      </a>
+
+      <a href="#faq">
+        Dúvidas
+      </a>
+
+      <a href="#contato">
+        Contato
+      </a>
+
+    </nav>
+
+
+    <div class="nav-actions">
+
+      <button
+        class="icon-btn menu-btn"
+        id="menuButton"
+        type="button"
+      >
+        ☰
+      </button>
+
+      <button
+        class="cart-btn"
+        id="cartButton"
+        type="button"
+      >
+        Pedido
+        <span
+          class="cart-count"
+          id="cartCount"
+        >0</span>
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- MENU MOBILE -->
+
+<div
+  id="mobileNav"
+  style="display:none;background:var(--papel);border-top:1px solid var(--linha);"
+>
+
+  <div
+    class="container"
+    style="display:grid;padding:12px 0;"
+  >
+
+    <a href="#inicio">Início</a>
+
+    <a href="#tercos">Terços</a>
+
+    <a href="#sobre">A Mater Dei</a>
+
+    <a href="#personalizados">
+      Personalizados
+    </a>
+
+    <a href="#faq">Dúvidas</a>
+
+    <a href="#contato">Contato</a>
+
+  </div>
+
+</div>
+
+
+<main>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section
+  class="hero"
+  id="inicio"
+>
+
+  <div class="container hero-content">
+
+    <div class="eyebrow">
+      ✠ Mater Dei Rosarium ✠
+    </div>
+
+    <img
+      class="hero-logo"
+      src="imagens/logo-mater-dei.png"
+      alt="Mater Dei"
+    >
+
+    <h1>
+      Terços para acompanhar a oração.
+    </h1>
+
+    <p>
+      Peças confeccionadas com cuidado,
+      inspiradas na devoção à Santíssima
+      Virgem Maria e pensadas para acompanhar
+      a oração do Santo Rosário.
+    </p>
+
+    <div class="actions">
+
+      <a
+        class="btn light"
+        href="#tercos"
+      >
+        Conhecer os terços
+      </a>
+
+      <a
+        class="btn outline"
+        style="color:#fff;border-color:#fff"
+        href="#sobre"
+      >
+        Conhecer a Mater Dei
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     TERÇOS
+========================= -->
+
+<section id="tercos">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="eyebrow">
+        Nossa coleção
+      </div>
+
+      <h2>
+        Nossos Terços
+      </h2>
+
+      <p>
+        Escolha um terço pronto ou comece
+        um pedido personalizado. No final,
+        o site prepara um resumo completo
+        para você enviar à Mater Dei.
+      </p>
+
+    </div>
+
+
+    <div class="filters">
+
+      <button
+        class="filter active"
+        type="button"
+        data-filter="todos"
+      >
+        Todos
+      </button>
+
+      <button
+        class="filter"
+        type="button"
+        data-filter="tradicional"
+      >
+        Tradicionais
+      </button>
+
+      <button
+        class="filter"
+        type="button"
+        data-filter="metal"
+      >
+        Metal
+      </button>
+
+      <button
+        class="filter"
+        type="button"
+        data-filter="personalizado"
+      >
+        Personalizados
+      </button>
+
+    </div>
+
+
+    <!-- OS PRODUTOS SERÃO COLOCADOS AQUI PELO JAVASCRIPT -->
+
+    <div
+      class="grid"
+      id="productGrid"
+    ></div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     BLOCO VISUAL
+========================= -->
+
+<section class="visual-break">
+
+  <div class="container visual-grid">
+
+    <div class="visual-card">
+
+      <img
+        src="imagens/terco-creme.png"
+        alt="Terço Mater Dei"
+      >
+
+    </div>
+
+
+    <div class="visual-copy">
+
+      <div class="eyebrow">
+        Uma peça de devoção
+      </div>
+
+      <h2>
+        Mais do que um terço.
+      </h2>
+
+      <p>
+        O Santo Rosário é um caminho de oração
+        e contemplação. Na Mater Dei, cada peça
+        procura unir beleza, cuidado artesanal
+        e significado, para que o terço acompanhe
+        a vida de oração de quem o recebe.
+      </p>
+
+      <a
+        class="btn"
+        href="#personalizados"
+      >
+        Quero personalizar
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CARACTERÍSTICAS
+========================= -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="eyebrow">
+        A proposta
+      </div>
+
+      <h2>
+        Fé em cada detalhe
+      </h2>
+
+      <p>
+        Uma identidade inspirada na tradição
+        mariana, com peças feitas para serem
+        usadas, rezadas e guardadas com carinho.
+      </p>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+      <div class="feature">
+
+        <div class="feature-icon">
+          ✠
+        </div>
+
+        <h3>
+          Devoção
+        </h3>
+
+        <p>
+          Terços pensados para acompanhar
+          momentos de oração e devoção.
+        </p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <div class="feature-icon">
+          ♡
+        </div>
+
+        <h3>
+          Cuidado
+        </h3>
+
+        <p>
+          Atenção aos materiais, acabamentos
+          e detalhes de cada peça.
+        </p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <div class="feature-icon">
+          ❖
+        </div>
+
+        <h3>
+          Personalização
+        </h3>
+
+        <p>
+          Possibilidades de contas, entremeios,
+          medalhas e outros detalhes.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     SOBRE
+========================= -->
+
+<section id="sobre">
+
+  <div class="container about">
+
+    <div>
+
+      <div class="eyebrow">
+        Quem somos
+      </div>
+
+      <h2>
+        A Mater Dei
+      </h2>
+
+      <p>
+        A Mater Dei nasceu de um sonho e de um
+        desejo de confeccionar terços e, através
+        deles, materializar a devoção e transmitir
+        a fé com amor.
+      </p>
+
+      <p>
+        O nome <strong>Mater Dei</strong>,
+        “Mãe de Deus”, expressa a inspiração
+        mariana da marca e o desejo de colocar
+        este trabalho sob a proteção de Nossa Senhora.
+      </p>
+
+      <p>
+        Cada terço é preparado com a intenção
+        de oferecer não somente uma peça, mas
+        um instrumento que acompanhe a oração,
+        a devoção e a vida cristã.
+      </p>
+
+      <p>
+        O projeto nasceu também do desejo de um
+        jovem de servir à Igreja por meio do trabalho
+        manual, colocando tempo, cuidado e amor
+        a serviço da fé.
+      </p>
+
+      <p
+        style="color:var(--azul);font-style:italic;"
+      >
+        Omnia in Maria, per Mariam,
+        cum Maria et ad Mariam.
+        <br>
+        Ad Maiorem Dei Gloriam.
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <div class="about-logo">
+
+        <img
+          src="imagens/logo-mater-dei.png"
+          alt="Logo oficial da Mater Dei"
+        >
+
+      </div>
+
+
+      <div
+        class="ornament"
+        style="margin-top:18px"
+      >
+
+        <div class="cross">
+          ✠
+        </div>
+
+        <h3>
+          Mater Dei
+        </h3>
+
+        <p>
+          “Tudo em Maria, por Maria,
+          com Maria e para Maria.”
+        </p>
+
+        <p
+          style="color:var(--suave);font-size:13px;"
+        >
+          Para maior glória de Deus.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     BLOCO FINAL
+========================= -->
+
+<section class="visual-break">
+
+  <div class="container visual-grid">
+
+    <div class="visual-copy">
+
+      <div class="eyebrow">
+        Nossa inspiração
+      </div>
+
+      <h2>
+        Uma devoção que se transforma em trabalho.
+      </h2>
+
+      <p>
+        As imagens e elementos da identidade
+        da Mater Dei carregam uma estética
+        mariana, clássica e tradicional,
+        inspirada na beleza da arte sacra.
+      </p>
+
+    </div>
+
+
+    <div class="visual-card">
+
+      <img
+        src="imagens/nossa-senhora.png"
+        alt="Imagem de Nossa Senhora"
+      >
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     PERSONALIZADOS
+========================= -->
+
+<section
+  class="custom"
+  id="personalizados"
+>
+
+  <div class="container custom-box">
+
+    <div class="eyebrow">
+      Feito especialmente para você
+    </div>
+
+    <h2>
+      Monte seu terço personalizado
+    </h2>
+
+    <p>
+      Escolha as características que você
+      deseja e descreva os detalhes.
+      O site monta o resumo do pedido
+      e envia tudo para a Mater Dei pelo WhatsApp.
+    </p>
+
+    <button
+      class="btn light"
+      type="button"
+      id="customButton"
+    >
+      Personalizar meu terço
+    </button>
+
+  </div>
+
+  </section>
+  <!-- =========================
+     FAQ
+========================= -->
+
+<section id="faq">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="eyebrow">
+        Atendimento
+      </div>
+
+      <h2>
+        Dúvidas frequentes
+      </h2>
+
+    </div>
+
+
+    <div class="faq">
+
+      <details>
+
+        <summary>
+          Como faço meu pedido?
+        </summary>
+
+        <p>
+          Escolha um terço pronto e adicione ao pedido,
+          ou abra o formulário de personalizado.
+          No final, o site prepara um resumo organizado
+          e abre o WhatsApp da Mater Dei.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Posso escolher os detalhes de um terço personalizado?
+        </summary>
+
+        <p>
+          Sim. Você poderá informar as características
+          desejadas, como contas, entremeio, crucifixo
+          e outros detalhes.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          O pagamento é feito pelo site?
+        </summary>
+
+        <p>
+          Não nesta versão. O pagamento e o envio
+          são combinados diretamente com a Mater Dei
+          após a confirmação do pedido.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Vocês enviam para outras cidades?
+        </summary>
+
+        <p>
+          Consulte o prazo e o valor do envio
+          durante o atendimento pelo WhatsApp.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          O pedido fica salvo no site?
+        </summary>
+
+        <p>
+          Não. Nesta versão, o site não cria uma conta
+          nem armazena seus dados pessoais.
+          Ele apenas monta o resumo para encaminhamento.
+        </p>
+
+      </details>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CONTATO
+========================= -->
+
+<section
+  class="contact"
+  id="contato"
+>
+
+  <div
+    class="container"
+    style="text-align:center"
+  >
+
+    <div class="eyebrow">
+      Atendimento
+    </div>
+
+    <h2>
+      Fale com a Mater Dei
+    </h2>
+
+    <p>
+      Pedidos, dúvidas, personalizados
+      e informações sobre envio.
+    </p>
+
+    <div class="actions">
+
+      <a
+        class="btn whatsapp"
+        id="contactBtn"
+        target="_blank"
+        rel="noopener"
+      >
+        Falar pelo WhatsApp
+      </a>
+
+      <a
+        class="btn light"
+        id="instagramBtn"
+        target="_blank"
+        rel="noopener"
+      >
+        Instagram
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     RODAPÉ
+========================= -->
+
+<footer>
+
+  <div class="container">
+
+    <img
+      class="footer-logo"
+      src="imagens/logo-mater-dei.png"
+      alt="Mater Dei"
+    >
+
+    <div class="footer-links">
+
+      <a href="#sobre">
+        Sobre
+      </a>
+
+      <a href="#tercos">
+        Terços
+      </a>
+
+      <a href="#personalizados">
+        Personalizados
+      </a>
+
+      <a href="#faq">
+        Dúvidas
+      </a>
+
+      <a href="#contato">
+        Contato
+      </a>
+
+    </div>
+
+    <div>
+      ©
+      <span id="year"></span>
+      Mater Dei. Todos os direitos reservados.
+    </div>
+
+    <div style="margin-top:5px;">
+      Omnia in Maria, per Mariam,
+      cum Maria et ad Mariam
+      · Ad Maiorem Dei Gloriam.
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- =========================
+     CARRINHO
+========================= -->
+
+<div
+  class="overlay"
+  id="cartOverlay"
+>
+
+  <aside class="drawer">
+
+    <div class="drawer-head">
+
+      <h2 style="margin:0">
+        Seu pedido
+      </h2>
+
+      <button
+        class="close"
+        type="button"
+        id="closeCartButton"
+      >
+        ×
+      </button>
+
+    </div>
+
+
+    <div
+      class="cart-list"
+      id="cartList"
+    ></div>
+
+
+    <div class="cart-total">
+
+      <div class="cart-total-line">
+
+        <strong>
+          Total
+        </strong>
+
+        <strong id="cartTotal">
+          R$ 0,00
+        </strong>
+
+      </div>
+
+
+      <div class="checkout-note">
+        O site prepara o resumo e envia
+        o pedido para o WhatsApp da Mater Dei.
+      </div>
+
+
+      <button
+        class="btn whatsapp"
+        style="width:100%"
+        type="button"
+        id="checkoutButton"
+      >
+        Revisar e enviar pedido
+      </button>
+
+    </div>
+
+  </aside>
+
+</div>
+
+
+<!-- =========================
+     MODAL DO PRODUTO
+========================= -->
+
+<div
+  class="modal"
+  id="productModal"
+>
+
+  <div class="modal-box">
+
+    <button
+      class="modal-close"
+      type="button"
+      id="closeProductModalButton"
+    >
+      ×
+    </button>
+
+    <div
+      id="productModalContent"
+    ></div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     MODAL PERSONALIZADO
+========================= -->
+
+<div
+  class="modal"
+  id="customModal"
+>
+
+  <div class="modal-box">
+
+    <button
+      class="modal-close"
+      type="button"
+      id="closeCustomModalButton"
+    >
+      ×
+    </button>
+
+
+    <div
+      class="section-head"
+      style="text-align:left;margin-bottom:20px"
+    >
+
+      <div class="eyebrow">
+        Personalizado
+      </div>
+
+      <h2>
+        Monte o seu terço
+      </h2>
+
+    </div>
+
+
+    <div class="notice">
+
+      Preencha os detalhes.
+      Antes de enviar, o site mostrará
+      um resumo do pedido.
+
+    </div>
+
+
+    <form
+      id="customForm"
+      style="margin-top:20px"
+    >
+
+      <div class="form-grid">
+
+
+        <label class="field">
+
+          <span>
+            Seu nome
+          </span>
+
+          <input
+            id="customName"
+            required
+            placeholder="Seu nome"
+          >
+
+        </label>
+
+
+        <label class="field">
+
+          <span>
+            Quantidade
+          </span>
+
+          <input
+            id="customQty"
+            type="number"
+            min="1"
+            value="1"
+            required
+          >
+
+        </label>
+
+
+        <label class="field">
+
+          <span>
+            Tipo
+          </span>
+
+          <select id="customType">
+
+            <option>
+              Terço tradicional
+            </option>
+
+            <option>
+              Terço de metal
+            </option>
+
+            <option>
+              Terço com foto personalizada
+            </option>
+
+            <option>
+              Outro
+            </option>
+
+          </select>
+
+        </label>
+
+
+        <label class="field">
+
+          <span>
+            Cor principal
+          </span>
+
+          <input
+            id="customColor"
+            placeholder="Ex.: azul, branco, marrom..."
+          >
+
+        </label>
+
+
+        <label class="field">
+
+          <span>
+            Entremeio / medalha
+          </span>
+
+          <input
+            id="customCenter"
+            placeholder="Ex.: Nossa Senhora, santo, foto..."
+          >
+
+        </label>
+
+
+        <label class="field">
+
+          <span>
+            Crucifixo
+          </span>
+
+          <input
+            id="customCross"
+            placeholder="Ex.: metal, tradicional..."
+          >
+
+        </label>
+
+
+        <label class="field full">
+
+          <span>
+            Outros detalhes
+          </span>
+
+          <textarea
+            id="customDescription"
+            rows="5"
+            placeholder="Descreva tudo o que você gostaria no terço."
+          ></textarea>
+
+        </label>
+
+
+      </div>
+
+
+      <button
+        class="btn"
+        style="width:100%;margin-top:15px"
+        type="submit"
+      >
+        Ver resumo do pedido
+      </button>
+
+    </form>
+
+
+    <div
+      class="summary"
+      id="customSummary"
+      style="display:none"
+    ></div>
+
+
+    <div
+      id="customSendArea"
+      style="display:none;margin-top:12px"
+    >
+
+      <button
+        class="btn whatsapp"
+        style="width:100%"
+        type="button"
+        id="sendCustomButton"
+      >
+        Enviar este pedido pelo WhatsApp
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+<script>
+
+/* =========================================
+   CONFIGURAÇÕES DA MATER DEI
+========================================= */
+
+const CONFIG = {
+  whatsapp: "5535999365361",
+
+  instagram: "https://www.instagram.com/",
+
+  nomeLoja: "Mater Dei"
+};
+
+
+/* =========================================
+   PRODUTOS
+========================================= */
+
+const PRODUTOS = [
+
+  {
+    id: 1,
+
+    nome: "Terço Tradicional",
+
+    categoria: "tradicional",
+
+    descricao:
+      "Modelo clássico e sóbrio para acompanhar a oração do Santo Rosário.",
+
+    detalhes:
+      "Peça artesanal. Consulte os materiais, cores e disponibilidade atual.",
+
+    preco: 49.90,
+
+    imagem: "imagens/terco-creme.png",
+
+    destaque: "Destaque"
+  },
+
+
+  {
+    id: 2,
+
+    nome: "Terço Mariano",
+
+    categoria: "tradicional",
+
+    descricao:
+      "Uma peça inspirada na devoção à Santíssima Virgem Maria.",
+
+    detalhes:
+      "Consulte cores, contas, entremeio e crucifixo disponíveis.",
+
+    preco: 59.90,
+
+    imagem: "imagens/terco-creme.png",
+
+    destaque: ""
+  },
+
+
+  {
+    id: 3,
+
+    nome: "Terço de Metal",
+
+    categoria: "metal",
+
+    descricao:
+      "Modelo de presença marcante, com componentes metálicos e proposta tradicional.",
+
+    detalhes:
+      "Consulte a composição e os acabamentos disponíveis.",
+
+    preco: 69.90,
+
+    imagem: "imagens/terco-azul.png",
+
+    destaque: "Metal"
+  },
+
+
+  {
+    id: 4,
+
+    nome: "Terço Personalizado",
+
+    categoria: "personalizado",
+
+    descricao:
+      "Peça preparada de acordo com as características escolhidas por você.",
+
+    detalhes:
+      "O valor final pode variar conforme materiais e personalização.",
+
+    preco: 79.90,
+
+    imagem: "imagens/terco-azul.png",
+
+    destaque: "Personalize"
+  }
+
+];
+
+
+/* =========================================
+   ESTADO DO SITE
+========================================= */
+
+let carrinho = [];
+
+let filtroAtual = "todos";
+
+let ultimoPersonalizado = null;
+
+
+/* =========================================
+   FUNÇÕES AUXILIARES
+========================================= */
+
+function money(valor) {
+
+  return Number(valor).toLocaleString(
+    "pt-BR",
+    {
+      style: "currency",
+      currency: "BRL"
+    }
+  );
+
+}
+
+
+function wa(texto) {
+
+  return (
+    "https://wa.me/" +
+    CONFIG.whatsapp +
+    "?text=" +
+    encodeURIComponent(texto)
+  );
+
+}
+
+
+function escapeHtml(valor) {
+
+  return String(valor)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+
+}
+
+
+/* =========================================
+   PRODUTOS
+========================================= */
+
+function renderProducts() {
+
+  const grid =
+    document.getElementById("productGrid");
+
+  if (!grid) return;
+
+
+  const lista = PRODUTOS.filter(function(produto) {
+
+    return (
+      filtroAtual === "todos" ||
+      produto.categoria === filtroAtual
+    );
+
+  });
+
+
+  grid.innerHTML = lista.map(function(produto) {
+
+    return `
+
+      <article class="card">
+
+        <div class="product-photo">
+
+          <img
+            src="${produto.imagem}"
+            alt="${escapeHtml(produto.nome)}"
+            loading="lazy"
+          >
+
+          ${
+            produto.destaque
+              ? `
+                <span class="badge">
+                  ${escapeHtml(produto.destaque)}
+                </span>
+              `
+              : ""
+          }
+
+        </div>
+
+
+        <div class="card-body">
+
+          <h3>
+            ${escapeHtml(produto.nome)}
+          </h3>
+
+
+          <div class="desc">
+            ${escapeHtml(produto.descricao)}
+          </div>
+
+
+          <div class="price">
+            ${money(produto.preco)}
+          </div>
+
+
+          <div class="card-actions">
+
+            <button
+              class="btn small"
+              type="button"
+              data-action="add"
+              data-id="${produto.id}"
+            >
+              Adicionar
+            </button>
+
+
+            <button
+              class="btn outline small"
+              type="button"
+              data-action="details"
+              data-id="${produto.id}"
+            >
+              Detalhes
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    `;
+
+  }).join("");
+
+}
+
+
+/* =========================================
+   FILTROS
+========================================= */
+
+function filterProducts(categoria, botao) {
+
+  filtroAtual = categoria;
+
+
+  document
+    .querySelectorAll(".filter")
+    .forEach(function(item) {
+
+      item.classList.remove("active");
+
+    });
+
+
+  if (botao) {
+
+    botao.classList.add("active");
+
+  }
+
+
+  renderProducts();
+
+}
+
+
+/* =========================================
+   ADICIONAR AO CARRINHO
+========================================= */
+
+function addToCart(id) {
+
+  const produto =
+    PRODUTOS.find(function(item) {
+
+      return item.id === Number(id);
+
+    });
+
+
+  if (!produto) return;
+
+
+  const existente =
+    carrinho.find(function(item) {
+
+      return item.id === produto.id;
+
+    });
+
+
+  if (existente) {
+
+    existente.qtd++;
+
+  } else {
+
+    carrinho.push({
+
+      ...produto,
+
+      qtd: 1
+
+    });
+
+  }
+
+
+  renderCart();
+
+  openCart();
+
+}
+
+
+/* =========================================
+   ALTERAR QUANTIDADE
+========================================= */
+
+function changeQty(id, delta) {
+
+  const item =
+    carrinho.find(function(produto) {
+
+      return produto.id === Number(id);
+
+    });
+
+
+  if (!item) return;
+
+
+  item.qtd += Number(delta);
+
+
+  if (item.qtd <= 0) {
+
+    carrinho =
+      carrinho.filter(function(produto) {
+
+        return produto.id !== Number(id);
+
+      });
+
+  }
+
+
+  renderCart();
+
+}
+
+
+/* =========================================
+   RENDERIZAR CARRINHO
+========================================= */
+
+function renderCart() {
+
+  const lista =
+    document.getElementById("cartList");
+
+  const contador =
+    document.getElementById("cartCount");
+
+  const totalElemento =
+    document.getElementById("cartTotal");
+
+
+  if (!lista || !contador || !totalElemento) {
+    return;
+  }
+
+
+  const quantidadeTotal =
+    carrinho.reduce(function(total, item) {
+
+      return total + item.qtd;
+
+    }, 0);
+
+
+  const valorTotal =
+    carrinho.reduce(function(total, item) {
+
+      return total + item.preco * item.qtd;
+
+    }, 0);
+
+
+  contador.textContent =
+    quantidadeTotal;
+
+
+  totalElemento.textContent =
+    money(valorTotal);
+
+
+  if (carrinho.length === 0) {
+
+    lista.innerHTML = `
+
+      <div class="empty">
+        Seu pedido está vazio.
+      </div>
+
+    `;
+
+    return;
+
+  }
+
+
+  lista.innerHTML =
+    carrinho.map(function(item) {
+
+      return `
+
+        <div class="cart-row">
+
+          <div>
+
+            <strong>
+              ${escapeHtml(item.nome)}
+            </strong>
+
+            <br>
+
+            <span
+              style="
+                color:var(--suave);
+                font-size:12px;
+              "
+            >
+              ${money(item.preco)} cada
+            </span>
+
+          </div>
+
+
+          <div class="qty">
+
+            <button
+              type="button"
+              data-cart-action="minus"
+              data-id="${item.id}"
+            >
+              −
+            </button>
+
+
+            <strong>
+              ${item.qtd}
+            </strong>
+
+
+            <button
+              type="button"
+              data-cart-action="plus"
+              data-id="${item.id}"
+            >
+              +
+            </button>
+
+          </div>
+
+        </div>
+
+      `;
+
+    }).join("");
+
+}
+
+
+/* =========================================
+   ABRIR CARRINHO
+========================================= */
+
+function openCart() {
+
+  const carrinhoElemento =
+    document.getElementById("cartOverlay");
+
+
+  if (!carrinhoElemento) return;
+
+
+  carrinhoElemento.classList.add("open");
+
+  document.body.classList.add("lock");
+
+}
+
+
+/* =========================================
+   FECHAR CARRINHO
+========================================= */
+
+function closeCart() {
+
+  const carrinhoElemento =
+    document.getElementById("cartOverlay");
+
+
+  if (!carrinhoElemento) return;
+
+
+  carrinhoElemento.classList.remove("open");
+
+  document.body.classList.remove("lock");
+
+}
+
+
+/* =========================================
+   MODAL DO PRODUTO
+========================================= */
+
+function openProductModal(id) {
+
+  const produto =
+    PRODUTOS.find(function(item) {
+
+      return item.id === Number(id);
+
+    });
+
+
+  if (!produto) return;
+
+
+  const conteudo =
+    document.getElementById(
+      "productModalContent"
+    );
+
+
+  const modal =
+    document.getElementById(
+      "productModal"
+    );
+
+
+  if (!conteudo || !modal) return;
+
+
+  conteudo.innerHTML = `
+
+    <div class="eyebrow">
+      ${escapeHtml(produto.categoria)}
+    </div>
+
+
+    <h2>
+      ${escapeHtml(produto.nome)}
+    </h2>
+
+
+    <img
+      src="${produto.imagem}"
+      alt="${escapeHtml(produto.nome)}"
+      style="
+        width:100%;
+        max-height:330px;
+        object-fit:cover;
+        margin:15px 0;
+      "
+    >
+
+
+    <p>
+      ${escapeHtml(produto.descricao)}
+    </p>
+
+
+    <p>
+      ${escapeHtml(produto.detalhes)}
+    </p>
+
+
+    <div class="price">
+      ${money(produto.preco)}
+    </div>
+
+
+    <div
+      class="actions"
+      style="justify-content:flex-start"
+    >
+
+      <button
+        class="btn"
+        type="button"
+        data-modal-add="${produto.id}"
+      >
+        Adicionar ao pedido
+      </button>
+
+
+      <a
+        class="btn whatsapp"
+        target="_blank"
+        rel="noopener"
+        href="${wa(
+          "Olá! Tenho interesse no " +
+          produto.nome +
+          " da Mater Dei."
+        )}"
+      >
+        Perguntar pelo WhatsApp
+      </a>
+
+    </div>
+
+  `;
+
+
+  modal.classList.add("open");
+
+}
+
+
+/* =========================================
+   FECHAR MODAL DO PRODUTO
+========================================= */
+
+function closeProductModal() {
+
+  const modal =
+    document.getElementById(
+      "productModal"
+    );
+
+
+  if (!modal) return;
+
+
+  modal.classList.remove("open");
+
+}
+
+
+/* =========================================
+   PERSONALIZAÇÃO
+========================================= */
+
+function openCustomModal() {
+
+  const modal =
+    document.getElementById(
+      "customModal"
+    );
+
+
+  if (!modal) return;
+
+
+  modal.classList.add("open");
+
+  document.body.classList.add("lock");
+
+
+  const resumo =
+    document.getElementById(
+      "customSummary"
+    );
+
+
+  const enviar =
+    document.getElementById(
+      "customSendArea"
+    );
+
+
+  if (resumo) {
+
+    resumo.style.display = "none";
+
+  }
+
+
+  if (enviar) {
+
+    enviar.style.display = "none";
+
+  }
+
+}
+
+
+function closeCustomModal() {
+
+  const modal =
+    document.getElementById(
+      "customModal"
+    );
+
+
+  if (!modal) return;
+
+
+  modal.classList.remove("open");
+
+  document.body.classList.remove("lock");
+
+}
+
+
+/* =========================================
+   RESUMO DO PERSONALIZADO
+========================================= */
+
+function criarResumoPersonalizado() {
+
+  const nome =
+    document
+      .getElementById("customName")
+      .value
+      .trim();
+
+
+  const quantidade =
+    document
+      .getElementById("customQty")
+      .value;
+
+
+  const tipo =
+    document
+      .getElementById("customType")
+      .value;
+
+
+  const cor =
+    document
+      .getElementById("customColor")
+      .value
+      .trim();
+
+
+  const entremeio =
+    document
+      .getElementById("customCenter")
+      .value
+      .trim();
+
+
+  const crucifixo =
+    document
+      .getElementById("customCross")
+      .value
+      .trim();
+
+
+  const detalhes =
+    document
+      .getElementById("customDescription")
+      .value
+      .trim();
+
+
+  ultimoPersonalizado = {
+
+    nome: nome,
+
+    qtd: quantidade,
+
+    tipo: tipo,
+
+    cor: cor,
+
+    entremeio: entremeio,
+
+    crucifixo: crucifixo,
+
+    detalhes: detalhes
+
+  };
+
+
+  const resumo =
+    document.getElementById(
+      "customSummary"
+    );
+
+
+  const areaEnviar =
+    document.getElementById(
+      "customSendArea"
+    );
+
+
+  resumo.innerHTML = `
+
+    <h3>
+      Resumo do seu pedido
+    </h3>
+
+
+    <div class="summary-line">
+
+      <span class="summary-label">
+        Cliente
+      </span>
+
+      <br>
+
+      ${escapeHtml(nome)}
+
+    </div>
+
+
+    <div class="summary-line">
+
+      <span class="summary-label">
+        Quantidade
+      </span>
+
+      <br>
+
+      ${escapeHtml(quantidade)}
+
+    </div>
+
+
+    <div class="summary-line">
+
+      <span class="summary-label">
+        Tipo
+      </span>
+
+      <br>
+
+      ${escapeHtml(tipo)}
+
+    </div>
+
+
+    <div class="summary-line">
+
+      <span class="summary-label">
+        Cor
+      </span>
+
+      <br>
+
+      ${escapeHtml(
+        cor || "Não informada"
+      )}
+
+    </div>
+
+
+    <div class="summary-line">
+
+      <span class="summary-label">
+        Entremeio / medalha
+      </span>
+
+      <br>
+
+      ${escapeHtml(
+        entremeio || "Não informado"
+      )}
+
+    </div>
+
+
+    <div class="summary-line">
+
+      <span class="summary-label">
+        Crucifixo
+      </span>
+
+      <br>
+
+      ${escapeHtml(
+        crucifixo || "Não informado"
+      )}
+
+    </div>
+
+
+    <div class="summary-line">
+
+      <span class="summary-label">
+        Outros detalhes
+      </span>
+
+      <br>
+
+      ${escapeHtml(
+        detalhes || "Não informado"
+      )}
+
+    </div>
+
+  `;
+
+
+  resumo.style.display = "block";
+
+  areaEnviar.style.display = "block";
+
+
+  resumo.scrollIntoView({
+
+    behavior: "smooth",
+
+    block: "nearest"
+
+  });
+
+}
+
+
+/* =========================================
+   ENVIAR PERSONALIZADO
+========================================= */
+
+function sendCustomOrder() {
+
+  if (!ultimoPersonalizado) {
+
+    alert(
+      "Primeiro preencha os dados do seu terço."
+    );
+
+    return;
+
+  }
+
+
+  const pedido =
+    ultimoPersonalizado;
+
+
+  const mensagem = `NOVO PEDIDO PERSONALIZADO — ${CONFIG.nomeLoja}
+
+Cliente: ${pedido.nome}
+Quantidade: ${pedido.qtd}
+Tipo: ${pedido.tipo}
+Cor principal: ${pedido.cor || "Não informada"}
+Entremeio / medalha: ${pedido.entremeio || "Não informado"}
+Crucifixo: ${pedido.crucifixo || "Não informado"}
+Outros detalhes: ${pedido.detalhes || "Não informado"}
+
+Pedido realizado pelo site da Mater Dei.
+
+Gostaria de confirmar a disponibilidade,
+o valor final, pagamento e envio.`;
+
+
+  window.open(
+    wa(mensagem),
+    "_blank"
+  );
+
+}
+
+
+/* =========================================
+   CHECKOUT
+========================================= */
+
+function checkout() {
+
+  if (carrinho.length === 0) {
+
+    alert(
+      "Seu pedido está vazio."
+    );
+
+    return;
+
+  }
+
+
+  let mensagem =
+    `NOVO PEDIDO — ${CONFIG.nomeLoja}\n\n`;
+
+
+  carrinho.forEach(function(item) {
+
+    mensagem +=
+      `• ${item.nome} — ` +
+      `${item.qtd}x — ` +
+      `${money(item.preco * item.qtd)}\n`;
+
+  });
+
+
+  const total =
+    carrinho.reduce(
+      function(soma, item) {
+
+        return soma +
+          item.preco * item.qtd;
+
+      },
+      0
+    );
+
+
+  mensagem +=
+    `\nTotal dos produtos: ${money(total)}\n\n`;
+
+
+  mensagem +=
+    "Olá! Fiz este pedido pelo site da Mater Dei. " +
+    "Gostaria de confirmar disponibilidade, " +
+    "pagamento e envio.";
+
+
+  window.open(
+    wa(mensagem),
+    "_blank"
+  );
+
+}
+
+
+/* =========================================
+   MENU MOBILE
+========================================= */
+
+function toggleMobileNav() {
+
+  const menu =
+    document.getElementById(
+      "mobileNav"
+    );
+
+
+  if (!menu) return;
+
+
+  if (menu.style.display === "none" ||
+      menu.style.display === "") {
+
+    menu.style.display = "block";
+
+  } else {
+
+    menu.style.display = "none";
+
+  }
+
+}
+
+
+function closeMobileNav() {
+
+  const menu =
+    document.getElementById(
+      "mobileNav"
+    );
+
+
+  if (!menu) return;
+
+
+  menu.style.display = "none";
+
+}
+
+
+/* =========================================
+   EVENTOS
+   AQUI ESTÁ A PRINCIPAL CORREÇÃO
+========================================= */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function() {
+
+
+    /* -------------------------
+       PRODUTOS
+    ------------------------- */
+
+    renderProducts();
+
+    renderCart();
+
+
+    /* -------------------------
+       ANO
+    ------------------------- */
+
+    const ano =
+      document.getElementById("year");
+
+
+    if (ano) {
+
+      ano.textContent =
+        new Date().getFullYear();
+
+    }
+
+
+    /* -------------------------
+       FILTROS
+    ------------------------- */
+
+    document
+      .querySelectorAll(".filter")
+      .forEach(function(botao) {
+
+        botao.addEventListener(
+          "click",
+          function() {
+
+            filterProducts(
+              botao.dataset.filter,
+              botao
+            );
+
+          }
+        );
+
+      });
+
+
+    /* -------------------------
+       PRODUTOS
+    ------------------------- */
+
+    document
+      .getElementById("productGrid")
+      .addEventListener(
+        "click",
+        function(event) {
+
+          const botao =
+            event.target.closest(
+              "button[data-action]"
+            );
+
+
+          if (!botao) return;
+
+
+          const id =
+            Number(botao.dataset.id);
+
+
+          if (
+            botao.dataset.action === "add"
+          ) {
+
+            addToCart(id);
+
+          }
+
+
+          if (
+            botao.dataset.action === "details"
+          ) {
+
+            openProductModal(id);
+
+          }
+
+        }
+      );
+
+
+    /* -------------------------
+       CARRINHO
+    ------------------------- */
+
+    document
+      .getElementById("cartButton")
+      .addEventListener(
+        "click",
+        openCart
+      );
+
+
+    document
+      .getElementById("closeCartButton")
+      .addEventListener(
+        "click",
+        closeCart
+      );
+
+
+    document
+      .getElementById("checkoutButton")
+      .addEventListener(
+        "click",
+        checkout
+      );
+
+
+    document
+      .getElementById("cartList")
+      .addEventListener(
+        "click",
+        function(event) {
+
+          const botao =
+            event.target.closest(
+              "button[data-cart-action]"
+            );
+
+
+          if (!botao) return;
+
+
+          const id =
+            Number(botao.dataset.id);
+
+
+          if (
+            botao.dataset.cartAction === "minus"
+          ) {
+
+            changeQty(id, -1);
+
+          }
+
+
+          if (
+            botao.dataset.cartAction === "plus"
+          ) {
+
+            changeQty(id, 1);
+
+          }
+
+        }
+      );
+
+
+    /* -------------------------
+       FECHAR CARRINHO
+       CLICANDO FORA
+    ------------------------- */
+
+    document
+      .getElementById("cartOverlay")
+      .addEventListener(
+        "click",
+        function(event) {
+
+          if (
+            event.target.id === "cartOverlay"
+          ) {
+
+            closeCart();
+
+          }
+
+        }
+      );
+
+
+    /* -------------------------
+       MENU MOBILE
+    ------------------------- */
+
+    document
+      .getElementById("menuButton")
+      .addEventListener(
+        "click",
+        toggleMobileNav
+      );
+
+
+    document
+      .querySelectorAll("#mobileNav a")
+      .forEach(function(link) {
+
+        link.addEventListener(
+          "click",
+          closeMobileNav
+        );
+
+      });
+
+
+    /* -------------------------
+       MODAL DO PRODUTO
+    ------------------------- */
+
+    document
+      .getElementById(
+        "closeProductModalButton"
+      )
+      .addEventListener(
+        "click",
+        closeProductModal
+      );
+
+
+    document
+      .getElementById("productModal")
+      .addEventListener(
+        "click",
+        function(event) {
+
+          if (
+            event.target.id ===
+            "productModal"
+          ) {
+
+            closeProductModal();
+
+          }
+
+
+          const botao =
+            event.target.closest(
+              "[data-modal-add]"
+            );
+
+
+          if (botao) {
+
+            addToCart(
+              Number(
+                botao.dataset.modalAdd
+              )
+            );
+
+            closeProductModal();
+
+          }
+
+        }
+      );
+
+
+    /* -------------------------
+       PERSONALIZADO
+    ------------------------- */
+
+    document
+      .getElementById("customButton")
+      .addEventListener(
+        "click",
+        openCustomModal
+      );
+
+
+    document
+      .getElementById(
+        "closeCustomModalButton"
+      )
+      .addEventListener(
+        "click",
+        closeCustomModal
+      );
+
+
+    document
+      .getElementById("customModal")
+      .addEventListener(
+        "click",
+        function(event) {
+
+          if (
+            event.target.id ===
+            "customModal"
+          ) {
+
+            closeCustomModal();
+
+          }
+
+        }
+      );
+
+
+    document
+      .getElementById("customForm")
+      .addEventListener(
+        "submit",
+        function(event) {
+
+          event.preventDefault();
+
+          criarResumoPersonalizado();
+
+        }
+      );
+
+
+    document
+      .getElementById("sendCustomButton")
+      .addEventListener(
+        "click",
+        sendCustomOrder
+      );
+
+
+    /* -------------------------
+       WHATSAPP
+    ------------------------- */
+
+    const contato =
+      document.getElementById(
+        "contactBtn"
+      );
+
+
+    if (contato) {
+
+      contato.href =
+        wa(
+          "Olá! Gostaria de falar com a Mater Dei sobre um pedido."
+        );
+
+    }
+
+
+    /* -------------------------
+       INSTAGRAM
+    ------------------------- */
+
+    const instagram =
+      document.getElementById(
+        "instagramBtn"
+      );
+
+
+    if (instagram) {
+
+      instagram.href =
+        CONFIG.instagram;
+
+    }
+
+
+  }
+);
+
+</script>
+
+</body>
+</html>
